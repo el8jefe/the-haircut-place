@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Haircut Place</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f0ece4;}
+    nav{
+      position:fixed;top:0;width:100%;padding:20px 60px;
+      display:flex;justify-content:space-between;align-items:center;
+      z-index:100;background:rgba(10,10,10,0.9);backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;letter-spacing:3px;color:#c9a84c;text-transform:uppercase;}
+    .nav-links{display:flex;gap:40px;list-style:none;}
+    .nav-links a{color:#f0ece4;text-decoration:none;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;opacity:0.7;transition:opacity 0.3s;}
+    .nav-links a:hover{opacity:1;}
+    .nav-cta{
+      background:#c9a84c;color:#0a0a0a;padding:10px 24px;
+      font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;
+      text-decoration:none;font-weight:500;transition:opacity 0.3s;
+    }
+    .nav-cta:hover{opacity:0.85;}
+    .hero{
+      height:100vh;display:flex;flex-direction:column;
+      justify-content:center;align-items:center;text-align:center;padding:0 20px;
+      background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600') center/cover no-repeat;
+    }
+    .hero-tag{font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;color:#fff;opacity:0.7;margin-bottom:24px;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);line-height:1.05;color:#fff;margin-bottom:24px;font-weight:600;}
+    .hero p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:420px;line-height:1.8;margin-bottom:48px;}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+    .btn-primary{background:#c9a84c;color:#0a0a0a;padding:16px 40px;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:500;transition:opacity 0.3s;}
+    .btn-primary:hover{opacity:0.85;}
+    .btn-outline{background:transparent;color:#fff;padding:16px 40px;border:1px solid rgba(255,255,255,0.5);font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-outline:hover{border-color:#fff;}
+    .section{padding:100px 60px;max-width:1200px;margin:0 auto;}
+    .section-tag{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;margin-bottom:16px;display:block;}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);margin-bottom:40px;font-weight:600;line-height:1.2;}
+    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:48px;margin-top:48px;}
+    .info-item .label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;margin-bottom:12px;}
+    .info-item .value{font-size:1rem;line-height:1.7;opacity:0.8;}
+    .info-item a{color:#f0ece4;text-decoration:none;}
+    .subscribe-section{background:#1a1a1a;padding:80px 60px;text-align:center;}
+    .subscribe-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:16px;}
+    .subscribe-section p{opacity:0.7;margin-bottom:32px;}
+    .subscribe-form{display:flex;gap:0;max-width:420px;margin:0 auto;}
+    .subscribe-form input{flex:1;padding:14px 20px;border:1px solid rgba(0,0,0,0.15);background:#fff;font-family:'Inter',sans-serif;font-size:0.85rem;outline:none;}
+    .subscribe-form button{background:#c9a84c;color:#0a0a0a;padding:14px 24px;border:none;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;}
+    footer{background:#f0ece4;color:#0a0a0a;padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+    .footer-logo{font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:3px;opacity:0.9;}
+    .footer-credit{font-size:0.72rem;letter-spacing:1px;opacity:0.3;text-decoration:none;color:#0a0a0a;}
+    @media(max-width:768px){
+      nav{padding:16px 24px;}
+      .nav-links{display:none;}
+      .section{padding:60px 24px;}
+      .hero h1{font-size:clamp(2.5rem,10vw,4rem);}
+      footer{padding:32px 24px;flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">The Haircut Place</div>
+  <ul class="nav-links">
+    <li><a href="#info">About</a></li>
+    <li><a href="#subscribe">Stay Connected</a></li>
+    <li><a href="tel:(203) 637-1313" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <p class="hero-tag">Premium Barbershop &mdash; Greenwich CT</p>
+  <h1>Sharp Cuts.<br/>Clean Lines.</h1>
+  <p>Traditional craft meets modern style. Book your appointment today.</p>
+  <div class="hero-buttons">
+    <a href="tel:(203) 637-1313" class="btn-primary">Book Appointment</a>
+    <a href="#info" class="btn-outline">Learn More</a>
+  </div>
+</section>
+<div id="info" style="background:#0a0a0a;">
+  <div class="section">
+    <span class="section-tag">Visit Us</span>
+    <h2>Come Find Us</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Phone</div>
+        <div class="value"><a href="tel:(203) 637-1313">(203) 637-1313</a></div>
+      </div>
+      <div class="info-item">
+        <div class="label">Address</div>
+        <div class="value">146 Sound Beach Avenue Old Greenwich, CT 06870</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Book Now</div>
+        <div class="value"><a href="tel:(203) 637-1313">Call to schedule your appointment</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="subscribe" class="subscribe-section">
+  <h2>Stay in the Loop</h2>
+  <p>Subscribe for updates, promotions, and news.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="Your email address"/>
+    <button>Subscribe</button>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">The Haircut Place</div>
+  <div style="font-size:0.8rem;opacity:0.5;">(203) 637-1313 &nbsp;&bull;&nbsp; Greenwich CT</div>
+  <a href="mailto:juan.rr.pablo@gmail.com" class="footer-credit">Site by Pablo Rincon ↗</a>
+</footer>
+</body>
+</html>
